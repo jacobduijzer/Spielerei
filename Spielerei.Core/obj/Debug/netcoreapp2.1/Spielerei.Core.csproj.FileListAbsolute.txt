@@ -1,9 +1,0 @@
-C:\projects\kata\Spielerei\Spielerei.Core\bin\Debug\netcoreapp2.1\Spielerei.Core.deps.json
-C:\projects\kata\Spielerei\Spielerei.Core\bin\Debug\netcoreapp2.1\Spielerei.Core.dll
-C:\projects\kata\Spielerei\Spielerei.Core\bin\Debug\netcoreapp2.1\Spielerei.Core.pdb
-C:\projects\kata\Spielerei\Spielerei.Core\obj\Debug\netcoreapp2.1\Spielerei.Core.csprojAssemblyReference.cache
-C:\projects\kata\Spielerei\Spielerei.Core\obj\Debug\netcoreapp2.1\Spielerei.Core.csproj.CoreCompileInputs.cache
-C:\projects\kata\Spielerei\Spielerei.Core\obj\Debug\netcoreapp2.1\Spielerei.Core.AssemblyInfoInputs.cache
-C:\projects\kata\Spielerei\Spielerei.Core\obj\Debug\netcoreapp2.1\Spielerei.Core.AssemblyInfo.cs
-C:\projects\kata\Spielerei\Spielerei.Core\obj\Debug\netcoreapp2.1\Spielerei.Core.dll
-C:\projects\kata\Spielerei\Spielerei.Core\obj\Debug\netcoreapp2.1\Spielerei.Core.pdb
