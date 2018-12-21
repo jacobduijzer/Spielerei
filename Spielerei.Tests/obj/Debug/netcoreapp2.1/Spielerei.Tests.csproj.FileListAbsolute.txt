@@ -1,0 +1,17 @@
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\Spielerei.Core.dll
+C:\projects\kata\Spielerei\Spielerei.Tests\obj\Debug\netcoreapp2.1\Spielerei.Tests.csprojAssemblyReference.cache
+C:\projects\kata\Spielerei\Spielerei.Tests\obj\Debug\netcoreapp2.1\Spielerei.Tests.csproj.CoreCompileInputs.cache
+C:\projects\kata\Spielerei\Spielerei.Tests\obj\Debug\netcoreapp2.1\Spielerei.Tests.AssemblyInfoInputs.cache
+C:\projects\kata\Spielerei\Spielerei.Tests\obj\Debug\netcoreapp2.1\Spielerei.Tests.AssemblyInfo.cs
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\Spielerei.Tests.deps.json
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\Spielerei.Tests.runtimeconfig.json
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\Spielerei.Tests.runtimeconfig.dev.json
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\Spielerei.Tests.dll
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\Spielerei.Tests.pdb
+C:\projects\kata\Spielerei\Spielerei.Tests\bin\Debug\netcoreapp2.1\Spielerei.Core.pdb
+C:\projects\kata\Spielerei\Spielerei.Tests\obj\Debug\netcoreapp2.1\Spielerei.Tests.csproj.CopyComplete
+C:\projects\kata\Spielerei\Spielerei.Tests\obj\Debug\netcoreapp2.1\Spielerei.Tests.dll
+C:\projects\kata\Spielerei\Spielerei.Tests\obj\Debug\netcoreapp2.1\Spielerei.Tests.pdb
