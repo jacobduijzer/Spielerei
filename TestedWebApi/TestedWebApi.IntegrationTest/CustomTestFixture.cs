@@ -5,7 +5,6 @@ using Refit;
 using System;
 using TestedWebApi.Api;
 using TestedWebApi.Domain.Beers;
-using TestedWebApi.Stubs.Beers;
 
 namespace TestedWebApi.IntegrationTest
 {
@@ -19,7 +18,7 @@ namespace TestedWebApi.IntegrationTest
                 .UseEnvironment(EnvironmentName.Development)
                 .ConfigureTestServices((IServiceCollection serviceCollection) =>
                 {
-                    serviceCollection.AddSingleton<IBeerRepository, BeerRepository>();
+                    serviceCollection.AddSingleton<IBeerRepository, TestedWebApi.Stubs.Beers.BeerRepository>();
                 })
                 .UseStartup<Startup>());
 
