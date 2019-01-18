@@ -69,3 +69,8 @@ public class BeerControllerShould : IClassFixture<CustomTestFixture>
         response.Should().HaveCount(2);
     }
 ```
+
+# Links
+
+- [Integration tests in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.2)
+- [How to Test ASP.NET Core Web API](https://www.infoq.com/articles/testing-aspnet-core-web-api?utm_source=articles_about_net-core-series&utm_medium=link&utm_campaign=net-core-series)
