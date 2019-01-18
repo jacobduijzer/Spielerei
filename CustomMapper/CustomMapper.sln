@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spielerei.Core", "Spielerei.Core\Spielerei.Core.csproj", "{8A3990F3-00F1-4174-8A1B-5257C5EF8A20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMapper.Core", "CustomMapper.Core\CustomMapper.Core.csproj", "{8A3990F3-00F1-4174-8A1B-5257C5EF8A20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spielerei.Tests", "Spielerei.Tests\Spielerei.Tests.csproj", "{F0BBB1B5-DFBD-460E-A5BD-8BFAC945B0EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMapper.Tests", "CustomMapper.Tests\CustomMapper.Tests.csproj", "{F0BBB1B5-DFBD-460E-A5BD-8BFAC945B0EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

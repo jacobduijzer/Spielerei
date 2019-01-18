@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Spielerei.Core\Spielerei.Core.csproj" />
+    <ProjectReference Include="..\CustomMapper.Core\CustomMapper.Core.csproj" />
   </ItemGroup>
 
 </Project>

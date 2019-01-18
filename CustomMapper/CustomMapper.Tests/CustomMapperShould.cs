@@ -1,20 +1,19 @@
-﻿using System;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Xunit;
 
-namespace Spielerei.Tests.CustomMapper
+namespace CustomMapper.Tests
 {
     public class CustomMapperShould
     {
-        private readonly Spielerei.Core.CustomMapper.CustomMapper _customMapper;
+        private readonly CustomMapper.Core.CustomMapper _customMapper;
 
         public CustomMapperShould() =>
-            _customMapper = new Spielerei.Core.CustomMapper.CustomMapper();
+            _customMapper = new Core.CustomMapper();
 
         [Fact]
         public void Construct() =>
             _customMapper.Should()
-                            .BeOfType<Spielerei.Core.CustomMapper.CustomMapper>();
+                            .BeOfType<CustomMapper.Core.CustomMapper>();
 
         [Theory]
         [InlineData("0", false)]
@@ -54,7 +53,6 @@ namespace Spielerei.Tests.CustomMapper
         {
             _customMapper.WithGenericMapper(x => x.ToLower() == "cow" ? "booh" : "caboom");
             _customMapper.GenericMapper<string>(input).Should().Be(expectedResult);
-
         }
 
         [Theory]
@@ -66,7 +64,7 @@ namespace Spielerei.Tests.CustomMapper
         {
             _customMapper.WithGenericMapper(x =>
             {
-                switch(x)
+                switch (x)
                 {
                     case "f": return TestEnum.Female;
                     case "m": return TestEnum.Male;
@@ -76,6 +74,5 @@ namespace Spielerei.Tests.CustomMapper
             });
             _customMapper.GenericMapper<TestEnum>(input).Should().Be(expectedResult);
         }
-
     }
 }

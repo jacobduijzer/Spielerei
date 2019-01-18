@@ -1,4 +1,4 @@
-﻿namespace Spielerei.Tests.CustomMapper
+﻿namespace CustomMapper.Tests
 {
     public enum TestEnum
     {

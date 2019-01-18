@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Spielerei.Core.CustomMapper
+namespace CustomMapper.Core
 {
     public class CustomMapper
-    {        
+    {
         private Func<string, bool> _stringToBoolMapper;
         private Func<string, object> _genericMapper;
 
@@ -15,7 +15,7 @@ namespace Spielerei.Core.CustomMapper
 
         public bool MapStringToBool(string value) =>
             _stringToBoolMapper(value);
-        
+
         public T MapStringToObject<T>(Func<string, object> mapper, string value) =>
             (T)mapper(value);
 
@@ -24,6 +24,5 @@ namespace Spielerei.Core.CustomMapper
 
         public T GenericMapper<T>(string value) =>
             (T)_genericMapper(value);
-
     }
 }
