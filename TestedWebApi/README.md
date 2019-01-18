@@ -2,26 +2,26 @@
 
 Integration tests with a dotnet core Web Api project. Using REFIT to test the different Api's from the integration test project.
 
+```c#
+public readonly ITestedWebApiDefinition Api;
+
+public CustomTestFixture()
+{
+    var server = new TestServer(new WebHostBuilder()
+        .UseEnvironment(EnvironmentName.Development)
+        .ConfigureTestServices((IServiceCollection serviceCollection) =>
+        {
+            serviceCollection.AddSingleton<IBeerRepository, BeerRepository>();
+        })
+        .UseStartup<Startup>());
+
+    var client = server.CreateClient();
+
+    Api = RestService.For<ITestedWebApiDefinition>(client);
+}
 ```
-    public readonly ITestedWebApiDefinition Api;
 
-    public CustomTestFixture()
-    {
-        var server = new TestServer(new WebHostBuilder()
-            .UseEnvironment(EnvironmentName.Development)
-            .ConfigureTestServices((IServiceCollection serviceCollection) =>
-            {
-                serviceCollection.AddSingleton<IBeerRepository, BeerRepository>();
-            })
-            .UseStartup<Startup>());
-
-        var client = server.CreateClient();
-
-        Api = RestService.For<ITestedWebApiDefinition>(client);
-    }
-```
-
-```
+```c#
 [Fact]
 public async Task GetAllBeers()
 {
