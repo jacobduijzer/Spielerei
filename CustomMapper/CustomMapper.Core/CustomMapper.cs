@@ -6,6 +6,7 @@ namespace CustomMapper.Core
     {
         private Func<string, bool> _stringToBoolMapper;
         private Func<string, object> _genericMapper;
+        private Type _type;
 
         public bool Map(Func<string, bool> mapper, string value) =>
             mapper(value);
@@ -22,7 +23,13 @@ namespace CustomMapper.Core
         public void WithGenericMapper(Func<string, object> genericMapper) =>
             _genericMapper = genericMapper;
 
+        public void WithType(Type type) =>
+            _type = type;
+
         public T GenericMapper<T>(string value) =>
             (T)_genericMapper(value);
+
+        public dynamic DynamicMapper(string value) =>
+            _genericMapper(value);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using System;
 using Xunit;
 
 namespace CustomMapper.Tests
@@ -73,6 +74,30 @@ namespace CustomMapper.Tests
                 }
             });
             _customMapper.GenericMapper<TestEnum>(input).Should().Be(expectedResult);
+        }
+
+        [Theory]
+        [InlineData("f", TestEnum.Female)]
+        [InlineData("m", TestEnum.Male)]
+        [InlineData("Peter", TestEnum.Alien)]
+        [InlineData("xx", TestEnum.Unknown)]
+        public void Test(string input, TestEnum expectedResult)
+        {
+            _customMapper.WithGenericMapper(x =>
+            {
+                switch (x)
+                {
+                    case "f": return TestEnum.Female;
+                    case "m": return TestEnum.Male;
+                    case "Peter": return TestEnum.Alien;
+                    default: return TestEnum.Unknown;
+                }
+            });
+
+            var type = typeof(TestEnum);
+            var value = Activator.CreateInstance(type);
+            value = Convert.ChangeType(_customMapper.DynamicMapper(input), value.GetType());
+            value.Should().Be(expectedResult);
         }
     }
 }
