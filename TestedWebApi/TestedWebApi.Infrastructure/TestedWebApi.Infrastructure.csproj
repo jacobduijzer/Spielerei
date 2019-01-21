@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LinqBuilder" Version="0.15.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TestedWebApi.Domain\TestedWebApi.Domain.csproj" />
   </ItemGroup>
 

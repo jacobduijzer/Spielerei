@@ -4,7 +4,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Refit;
 using System;
 using TestedWebApi.Api;
+using TestedWebApi.Domain.Bars;
 using TestedWebApi.Domain.Beers;
+using TestedWebApi.Domain.Shared;
+using TestedWebApi.Stubs.Bars;
+using TestedWebApi.Stubs.Beers;
 
 namespace TestedWebApi.IntegrationTest
 {
@@ -18,7 +22,9 @@ namespace TestedWebApi.IntegrationTest
                 .UseEnvironment(EnvironmentName.Development)
                 .ConfigureTestServices((IServiceCollection serviceCollection) =>
                 {
-                    serviceCollection.AddSingleton<IBeerRepository, TestedWebApi.Stubs.Beers.BeerRepository>();
+                    // Use stubbed database for integration tests
+                    serviceCollection.AddSingleton<IDatabase<Beer>, StubBeerDatabase>();
+                    serviceCollection.AddSingleton<IDatabase<Bar>, StubBarDatabase>();
                 })
                 .UseStartup<Startup>());
 

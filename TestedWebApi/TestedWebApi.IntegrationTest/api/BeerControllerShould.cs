@@ -35,7 +35,7 @@ namespace TestedWebApi.IntegrationTest.api
             {
                 Id = 1,
                 Name = "Stubbed Beer - Best Beer Ever",
-                IsStarred = true
+                IsFavorite = true
             };
 
             await _fixture.Api.UpdateBeer(updatedBeer);
@@ -43,7 +43,7 @@ namespace TestedWebApi.IntegrationTest.api
             var beer = await _fixture.Api.GetBeerById(updatedBeer.Id);
 
             beer.Name.Should().Be(updatedBeer.Name);
-            beer.IsStarred.Should().Be(updatedBeer.IsStarred);
+            beer.IsFavorite.Should().Be(updatedBeer.IsFavorite);
         }
     }
 }

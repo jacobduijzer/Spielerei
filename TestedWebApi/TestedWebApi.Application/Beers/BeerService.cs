@@ -1,22 +1,23 @@
 ﻿using System.Collections.Generic;
 using TestedWebApi.Domain.Beers;
+using TestedWebApi.Domain.Shared;
 
 namespace TestedWebApi.Application.Beers
 {
     public class BeerService : IBeerService
     {
-        private readonly IBeerRepository _beerRepository;
+        private readonly IRepository<Beer> _beerRepository;
 
-        public BeerService(IBeerRepository beerRepository) =>
+        public BeerService(IRepository<Beer> beerRepository) =>
             _beerRepository = beerRepository;
 
         public List<Beer> GetAllBeers() =>
-            _beerRepository.GetAllBeers();
+            _beerRepository.GetAll();
 
         public Beer GetBeerById(int id) =>
-            _beerRepository.GetBeerById(id);
+            _beerRepository.GetById(id);
 
         public void UpdateBeer(Beer updatedBeer) =>
-            _beerRepository.UpdateBeer(updatedBeer);
+            _beerRepository.Update(updatedBeer);
     }
 }

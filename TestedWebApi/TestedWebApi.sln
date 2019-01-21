@@ -3,17 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestedWebApi.Api", "TestedWebApi.Api\TestedWebApi.Api.csproj", "{57509751-2DB2-4B3E-AC02-ED1C79513454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestedWebApi.Api", "TestedWebApi.Api\TestedWebApi.Api.csproj", "{57509751-2DB2-4B3E-AC02-ED1C79513454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestedWebApi.Domain", "TestedWebApi.Domain\TestedWebApi.Domain.csproj", "{C9189C16-46F6-4885-906C-3C82CB7C9FF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestedWebApi.Domain", "TestedWebApi.Domain\TestedWebApi.Domain.csproj", "{C9189C16-46F6-4885-906C-3C82CB7C9FF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestedWebApi.Application", "TestedWebApi.Application\TestedWebApi.Application.csproj", "{FB233644-170F-4CA2-8C1F-75AC376634BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestedWebApi.Application", "TestedWebApi.Application\TestedWebApi.Application.csproj", "{FB233644-170F-4CA2-8C1F-75AC376634BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestedWebApi.Infrastructure", "TestedWebApi.Infrastructure\TestedWebApi.Infrastructure.csproj", "{D373A875-F493-4E33-9D34-C38D02264CC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestedWebApi.Infrastructure", "TestedWebApi.Infrastructure\TestedWebApi.Infrastructure.csproj", "{D373A875-F493-4E33-9D34-C38D02264CC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestedWebApi.IntegrationTest", "TestedWebApi.IntegrationTest\TestedWebApi.IntegrationTest.csproj", "{2055BD8B-CA68-4205-AE3A-B263D67CD9C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestedWebApi.IntegrationTest", "TestedWebApi.IntegrationTest\TestedWebApi.IntegrationTest.csproj", "{2055BD8B-CA68-4205-AE3A-B263D67CD9C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestedWebApi.Stubs", "TestedWebApi.Stubs\TestedWebApi.Stubs.csproj", "{21772712-70BE-47A8-8B55-6BD80E130E3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestedWebApi.Stubs", "TestedWebApi.Stubs\TestedWebApi.Stubs.csproj", "{21772712-70BE-47A8-8B55-6BD80E130E3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D91DF2EF-1E90-4B69-83D6-4C4C2563D23F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

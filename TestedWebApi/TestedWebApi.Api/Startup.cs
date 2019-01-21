@@ -1,11 +1,17 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using MediatR;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TestedWebApi.Application.Bars.UseCases;
 using TestedWebApi.Application.Beers;
+using TestedWebApi.Domain.Bars;
 using TestedWebApi.Domain.Beers;
+using TestedWebApi.Domain.Shared;
+using TestedWebApi.Infrastructure.Bars;
 using TestedWebApi.Infrastructure.Beers;
+using TestedWebApi.Infrastructure.Shared;
 
 namespace TestedWebApi.Api
 {
@@ -22,9 +28,15 @@ namespace TestedWebApi.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<IBeerService, BeerService>();
 
-            services.AddScoped<IBeerRepository, BeerRepository>();
+            services.AddMediatR(typeof(BarsHandler));
+
+            services.AddScoped<IBeerService, BeerService>();
+            services.AddSingleton<IDatabase<Beer>, BeerDatabase>();
+            services.AddScoped<IRepository<Beer>, Repository<Beer>>();
+
+            services.AddScoped<IDatabase<Bar>, BarDatabase>();
+            services.AddScoped<IRepository<Bar>, Repository<Bar>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
