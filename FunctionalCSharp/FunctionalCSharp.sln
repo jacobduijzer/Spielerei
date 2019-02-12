@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionalCSharp", "FunctionalCSharp\FunctionalCSharp.csproj", "{A92C830C-7DF8-470C-84F9-837CAAA74586}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalCSharp.Tests", "FunctionalCSharp.Tests\FunctionalCSharp.Tests.csproj", "{8DF0D486-557D-4612-BEB7-DC7C8FC43CD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A92C830C-7DF8-470C-84F9-837CAAA74586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92C830C-7DF8-470C-84F9-837CAAA74586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92C830C-7DF8-470C-84F9-837CAAA74586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92C830C-7DF8-470C-84F9-837CAAA74586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF0D486-557D-4612-BEB7-DC7C8FC43CD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF0D486-557D-4612-BEB7-DC7C8FC43CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF0D486-557D-4612-BEB7-DC7C8FC43CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF0D486-557D-4612-BEB7-DC7C8FC43CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A27A0CE-5F22-4D2E-83BD-7C899C3FA927}
+	EndGlobalSection
+EndGlobal
