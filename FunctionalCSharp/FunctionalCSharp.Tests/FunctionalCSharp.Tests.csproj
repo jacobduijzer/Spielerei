@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="StringFormatterTests\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\FunctionalCSharp\FunctionalCSharp.csproj" />
   </ItemGroup>
-
 </Project>
