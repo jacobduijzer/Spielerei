@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace FunctionalCSharp
 {
-    public class Functional
+    public class ModFunctions
     {
         private Func<int, bool> isMod2 = x => x % 2 == 0;
         private Func<int, bool> isNotMod2 = x => x % 2 != 0;
@@ -15,6 +15,4 @@ namespace FunctionalCSharp
         public IEnumerable<int> GetUnevenNumbers(IEnumerable<int> list) =>
             list.Where(isNotMod2);
     }
-
-    
 }

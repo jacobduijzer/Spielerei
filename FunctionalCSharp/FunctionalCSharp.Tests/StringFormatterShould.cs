@@ -11,10 +11,7 @@ namespace FunctionalCSharp.Tests
         [Theory]
         [InlineData("red", "good", "desc", "normal", "titleredgooddesc")]
         [InlineData("red", "good", "desc", "biologisch", "titleredgooddescbio")]
-        public void formatstring(string kleur, string klasse, string sortering, string teeltwijze, string expectedString)
-        {
-            var formattedString = StringFormatter.GetFormattedName("title", kleur, klasse, sortering, teeltwijze);
-            formattedString.Should().Be(expectedString);
-        }
+        public void formatstring(string kleur, string klasse, string sortering, string teeltwijze, string expectedString) =>
+            StringFormatter.GetFormattedName("title", kleur, klasse, sortering, teeltwijze).Should().Be(expectedString);
     }
 }
