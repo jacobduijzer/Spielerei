@@ -6,27 +6,27 @@ namespace FunctionalCSharp
     {
         public static string GetFormattedName(string productName, string productColor, string productClass, string cultivationType) =>
             productName
-            .AddNamePart($", {productColor}", () => !string.IsNullOrEmpty(productColor))
-            .AddNamePart($", {productClass}", () => !string.IsNullOrEmpty(productClass))
-            .AddNamePart(" (BIO)", () => !string.IsNullOrEmpty(cultivationType) && cultivationType.Equals("biologic"));
+                .AppendPart($", {productColor}", () => !string.IsNullOrEmpty(productColor))
+                .AppendPart($", {productClass}", () => !string.IsNullOrEmpty(productClass))
+                .AppendPart(" (BIO)", () => !string.IsNullOrEmpty(cultivationType) && cultivationType.Equals("biologic"));
 
-        private static string AddNamePart(this string formattedstring, string value, Func<bool> testExpression) =>
-            testExpression() == true ? $"{formattedstring}{value}" : formattedstring;
+        private static string AppendPart(this string inputString, string value, Func<bool> testExpression) =>
+            testExpression() == true ? $"{inputString}{value}" : inputString;
     }
 
     public static class StringFormatter1
     {
         public static string GetFormattedName(string productName, string productColor, string productClass, string cultivationType) =>
             productName
-            .AddNamePart(productColor)
-            .AddNamePart(productClass)
-            .AddNamePart(" (BIO)", () => !string.IsNullOrEmpty(cultivationType) && cultivationType.Equals("biologic"));
+                .AppendPart(productColor)
+                .AppendPart(productClass)
+                .AppendPart(" (BIO)", () => !string.IsNullOrEmpty(cultivationType) && cultivationType.Equals("biologic"));
 
-        private static string AddNamePart(this string formattedstring, string value) =>
-        !string.IsNullOrEmpty(value) ? $"{formattedstring}, {value}" : formattedstring;
+        private static string AppendPart(this string inputString, string value) =>
+            !string.IsNullOrEmpty(value) ? $"{inputString}, {value}" : inputString;
 
-        private static string AddNamePart(this string formattedstring, string value, Func<bool> testExpression) =>
-            testExpression() == true ? $"{formattedstring}{value}" : formattedstring;
+        private static string AppendPart(this string inputString, string value, Func<bool> testExpression) =>
+            testExpression() == true ? $"{inputString}{value}" : inputString;
     }
 
     public static class OldStringFormatter
