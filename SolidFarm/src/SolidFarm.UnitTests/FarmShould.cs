@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
-using SolidFarm.Domain;
 using SolidFarm.Domain.Animals;
 using SolidFarm.Domain.Farms;
 using SolidFarm.Domain.Invoices;
+using SolidFarm.Domain.SharedKernel;
 using Xunit;
 
 namespace SolidFarm.UnitTests
@@ -40,7 +40,6 @@ namespace SolidFarm.UnitTests
 
         [Fact]
         public void HaveAnimalRecords() => _farm.AnimalRecords.Should().NotBeNullOrEmpty().And.HaveCount(5);
-
 
          // Method 1: logic fully in domain
         [Fact]
@@ -78,7 +77,7 @@ namespace SolidFarm.UnitTests
         // Method 5: inject a list of filters
         [Fact]
         public void GenerateInvoicesWithMultipleInjectedFilters() =>
-            _farm.GetInvoices(new List<IInvoiceFilter>
+            _farm.GetInvoices(new List<IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>>>
             {
                 new InvoiceFilterForChicken(DateTime.Now),
                 new InvoiceFilterForCows(DateTime.Now)

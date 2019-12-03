@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SolidFarm.Domain.Animals;
+using SolidFarm.Domain.SharedKernel;
 
 namespace SolidFarm.Domain.Invoices
 {
-    public class InvoiceFilterBase: IInvoiceFilter
+    public class InvoiceFilterBase : IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>>
     {
         public Predicate<AnimalRecord> Filter { get; }
         public virtual Func<IEnumerable<AnimalRecord>, IEnumerable<Invoice>> Create => (records) =>

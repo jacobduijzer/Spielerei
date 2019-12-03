@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SolidFarm.Domain.Animals;
 using SolidFarm.Domain.Invoices;
+using SolidFarm.Domain.SharedKernel;
 
 namespace SolidFarm.Domain.Farms
 {
@@ -47,11 +48,11 @@ namespace SolidFarm.Domain.Farms
                 create(AnimalRecords.FindAll(predicate));
 
         // Method 4: inject a filter
-        public IEnumerable<Invoice> GetInvoices(IInvoiceFilter filter) =>
+        public IEnumerable<Invoice> GetInvoices(IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>> filter) =>
             filter.Create(AnimalRecords.FindAll(filter.Filter));
 
         // Method 5: multiple filters
-        public IEnumerable<Invoice> GetInvoices(List<IInvoiceFilter> filters) =>
+        public IEnumerable<Invoice> GetInvoices(List<IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>>> filters) =>
             filters.SelectMany(filter => filter.Create(AnimalRecords.FindAll(filter.Filter)));
     }
 }
