@@ -13,12 +13,15 @@ namespace SolidFarm.Domain.Farms
 
         public Farm() => AnimalRecords = new List<AnimalRecord>();
 
-        public void DoAnimalWork(IAnimal animal, AnimalAction animalAction)
+        public void DoAnimalWork(IAnimal animal, AnimalAction animalAction) =>
+            DoAnimalWork(animal, animalAction, DateTime.Now);
+
+        public void DoAnimalWork(IAnimal animal, AnimalAction animalAction, DateTime actionDate)
         {
             if (AnimalRecords.Any(x => x.Animal.Id.Equals(animal.Id)))
-                AnimalRecords.First(x => x.Animal.Id.Equals(animal.Id)).AddAnimalAction(DateTime.Now, animalAction);
+                AnimalRecords.First(x => x.Animal.Id.Equals(animal.Id)).AddAnimalAction(actionDate, animalAction);
             else
-                AnimalRecords.Add(new AnimalRecord(animal, DateTime.Now, animalAction));
+                AnimalRecords.Add(new AnimalRecord(animal, actionDate, animalAction));
         }
 
         public IEnumerable<Invoice> GetInvoices(DateTime date)

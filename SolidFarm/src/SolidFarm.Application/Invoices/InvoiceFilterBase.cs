@@ -21,5 +21,12 @@ namespace SolidFarm.Application.Invoices
         public InvoiceFilterBase(string animalType, DateTime filterDate) =>
             Filter = new Predicate<AnimalRecord>(x => x != null && (x.Animal.GetType().Name.Equals(animalType) &&
                                                                     x.Records.Any(y => y.DateTime.Date.Equals(filterDate.Date) && y.AnimalAction.Equals(AnimalAction.Sold))));
+
+        public InvoiceFilterBase(string animalType, DateTime startDate, DateTime endDate) =>
+            Filter = new Predicate<AnimalRecord>(x => x != null && x.Animal.GetType().Name.Equals(animalType) &&
+                                                      x.Records.Any(y =>
+                                                          ( y.DateTime.Date >= startDate &&
+                                                            y.DateTime.Date <= endDate ) &&
+                                                          y.AnimalAction.Equals(AnimalAction.Sold)));
     }
 }

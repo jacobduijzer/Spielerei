@@ -83,5 +83,33 @@ namespace SolidFarm.UnitTests.Domain.Farms
                 new InvoiceFilterForChicken(DateTime.Now),
                 new InvoiceFilterForCows(DateTime.Now)
             }).Should().NotBeNullOrEmpty().And.HaveCount(4);
+
+        [Fact]
+        public void GenerateInvoicesWithDateRangeFilter()
+        {
+            var farm = new Farm();
+
+            var cow1 = new Cow(DateTime.Now.AddYears(-10));
+            var cow2 = new Cow(DateTime.Now.AddYears(-10));
+            var cow3 = new Cow(DateTime.Now.AddYears(-10));
+            var cow4 = new Cow(DateTime.Now.AddYears(-10));
+            var cow5 = new Cow(DateTime.Now.AddYears(-10));
+
+            farm.DoAnimalWork(cow1, AnimalAction.Bought, DateTime.Now.AddYears(-1));
+            farm.DoAnimalWork(cow2, AnimalAction.Bought, DateTime.Now.AddYears(-1));
+            farm.DoAnimalWork(cow3, AnimalAction.Bought, DateTime.Now.AddYears(-1));
+            farm.DoAnimalWork(cow4, AnimalAction.Bought, DateTime.Now.AddYears(-1));
+            farm.DoAnimalWork(cow5, AnimalAction.Bought, DateTime.Now.AddYears(-1));
+
+            farm.DoAnimalWork(cow1, AnimalAction.Sold, DateTime.Now.AddDays(-20));
+            farm.DoAnimalWork(cow2, AnimalAction.Sold, DateTime.Now.AddDays(-18));
+            farm.DoAnimalWork(cow3, AnimalAction.Sold, DateTime.Now.AddDays(-16));
+            farm.DoAnimalWork(cow4, AnimalAction.Sold, DateTime.Now.AddDays(-12));
+            farm.DoAnimalWork(cow5, AnimalAction.Sold, DateTime.Now.AddDays(-5));
+
+            var invoices = farm.GetInvoices(new InvoiceFilterForChicken(DateTime.Now.AddDays(-20), DateTime.Now.AddDays(-10)));
+
+            invoices.Should().NotBeNullOrEmpty().And.HaveCount(4);
+        }
     }
 }

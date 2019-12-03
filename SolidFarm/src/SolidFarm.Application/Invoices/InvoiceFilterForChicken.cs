@@ -9,5 +9,10 @@ namespace SolidFarm.Application.Invoices
             : base(nameof(Chicken), filterDate)
         {
         }
+
+        public InvoiceFilterForChicken(DateTime startDate, DateTime endDate)
+            : base(nameof(Chicken), startDate, endDate)
+        {
+        }
     }
 }
