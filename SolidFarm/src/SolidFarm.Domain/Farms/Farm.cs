@@ -43,22 +43,12 @@ namespace SolidFarm.Domain.Farms
         }
 
         // Method 2: inhect query, logic in domain
-        public IEnumerable<Invoice> GetInvoices(Predicate<AnimalRecord> predicate,
-            Func<List<AnimalRecord>, List<Invoice>> create)
-        {
-            var invoices = new List<Invoice>();
-            var animals = AnimalRecords.FindAll(predicate);
-            invoices.AddRange(create(animals));
-
-            return invoices;
-        }
+        public IEnumerable<Invoice> GetInvoices(Predicate<AnimalRecord> predicate, Func<List<AnimalRecord>, List<Invoice>> create) =>
+                create(AnimalRecords.FindAll(predicate));
 
         // Method 4: inject a filter
-        public IEnumerable<Invoice> GetInvoices(IInvoiceFilter filter)
-        {
-            var animals = AnimalRecords.FindAll(filter.Filter);
-            return filter.Create(animals);
-        }
+        public IEnumerable<Invoice> GetInvoices(IInvoiceFilter filter) =>
+            filter.Create(AnimalRecords.FindAll(filter.Filter));
 
         // Method 5: multiple filters
         public IEnumerable<Invoice> GetInvoices(List<IInvoiceFilter> filters) =>
