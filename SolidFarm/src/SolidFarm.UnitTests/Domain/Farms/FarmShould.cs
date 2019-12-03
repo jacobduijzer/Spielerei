@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
+using SolidFarm.Application.Invoices;
 using SolidFarm.Domain.Animals;
 using SolidFarm.Domain.Farms;
 using SolidFarm.Domain.Invoices;
 using SolidFarm.Domain.SharedKernel;
 using Xunit;
 
-namespace SolidFarm.UnitTests
+namespace SolidFarm.UnitTests.Domain.Farms
 {
     public class FarmShould
     {

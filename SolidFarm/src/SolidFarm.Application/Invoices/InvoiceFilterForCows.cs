@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
 using SolidFarm.Domain.Animals;
 
-namespace SolidFarm.Domain.Invoices
+namespace SolidFarm.Application.Invoices
 {
     public class InvoiceFilterForCows : InvoiceFilterBase
     {

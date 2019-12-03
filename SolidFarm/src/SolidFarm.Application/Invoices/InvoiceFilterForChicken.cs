@@ -1,7 +1,7 @@
 using System;
 using SolidFarm.Domain.Animals;
 
-namespace SolidFarm.Domain.Invoices
+namespace SolidFarm.Application.Invoices
 {
     public class InvoiceFilterForChicken : InvoiceFilterBase
     {

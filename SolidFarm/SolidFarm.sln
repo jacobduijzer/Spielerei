@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidFarm.Domain", "src\Sol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidFarm.UnitTests", "src\SolidFarm.UnitTests\SolidFarm.UnitTests.csproj", "{E2067E84-FCEC-4FA9-B667-15459A03B6FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidFarm.Application", "src\SolidFarm.Application\SolidFarm.Application.csproj", "{DAEBD495-7712-44BB-ACBC-2140800405DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +48,22 @@ Global
 		{E2067E84-FCEC-4FA9-B667-15459A03B6FD}.Release|x64.Build.0 = Release|Any CPU
 		{E2067E84-FCEC-4FA9-B667-15459A03B6FD}.Release|x86.ActiveCfg = Release|Any CPU
 		{E2067E84-FCEC-4FA9-B667-15459A03B6FD}.Release|x86.Build.0 = Release|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Debug|x64.Build.0 = Debug|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Debug|x86.Build.0 = Debug|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Release|x64.ActiveCfg = Release|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Release|x64.Build.0 = Release|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{DAEBD495-7712-44BB-ACBC-2140800405DD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{758FD0CC-7ABE-465B-BED7-18FBF5BB60F7} = {DD6DAB18-5370-4995-868D-402393A8A318}
 		{E2067E84-FCEC-4FA9-B667-15459A03B6FD} = {DD6DAB18-5370-4995-868D-402393A8A318}
+		{DAEBD495-7712-44BB-ACBC-2140800405DD} = {DD6DAB18-5370-4995-868D-402393A8A318}
 	EndGlobalSection
 EndGlobal

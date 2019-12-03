@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SolidFarm.Application\SolidFarm.Application.csproj" />
     <ProjectReference Include="..\SolidFarm.Domain\SolidFarm.Domain.csproj" />
   </ItemGroup>
 

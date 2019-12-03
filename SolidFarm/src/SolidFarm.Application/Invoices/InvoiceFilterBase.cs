@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SolidFarm.Domain.Animals;
+using SolidFarm.Domain.Invoices;
 using SolidFarm.Domain.SharedKernel;
 
-namespace SolidFarm.Domain.Invoices
+namespace SolidFarm.Application.Invoices
 {
     public class InvoiceFilterBase : IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>>
     {
