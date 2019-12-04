@@ -20,5 +20,10 @@ While there might be many ways to Rome I want to emphasize that:
 
 I created the following interface:
 
-'''csharp
-'''
+```csharp
+public interface IFilterAndCreate<TFilterObject, TCreateIn, TCreateOut>
+    {
+        Predicate<TFilterObject> Filter { get; }
+        Func<TCreateIn, TCreateOut> Create { get; }
+    }
+```
