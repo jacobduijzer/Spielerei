@@ -30,6 +30,8 @@ public interface IFilterAndCreate<TFilterObject, TCreateIn, TCreateOut>
 }
 ```
 
+The definition of the generics might seem a bit too complicated and many times ```TFilterObject``` and ```TCreateIn``` might be of the same type but, as I found out when using it in a real project, this is not always the case. [provide samples] 
+
 ## Sample implementation
 
 An implementation of the interface I used a base class here because I filter on cow's and chickens which are both ```IAnimal```) could look like this:
