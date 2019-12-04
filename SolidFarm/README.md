@@ -1,4 +1,4 @@
-![https://github.com/jacobduijzer/Spielerei/actions?query=workflow%3ASolidFarm](https://github.com/jacobduijzer/Spielerei/workflows/SolidFarm/badge.svg) 
+![](https://github.com/jacobduijzer/Spielerei/workflows/SolidFarm/badge.svg) 
 
 # Introduction
 
@@ -26,4 +26,12 @@ public interface IFilterAndCreate<TFilterObject, TCreateIn, TCreateOut>
     Predicate<TFilterObject> Filter { get; }
     Func<TCreateIn, TCreateOut> Create { get; }
 }
+```
+
+An implementation of the interface I used a base class here because I filter on cow's and chickens which are both ```IAnimal```) could look like this:
+
+```csharp
+```
+
+```csharp
 ```
