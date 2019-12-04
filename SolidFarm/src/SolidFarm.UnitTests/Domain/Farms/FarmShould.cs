@@ -107,7 +107,7 @@ namespace SolidFarm.UnitTests.Domain.Farms
             farm.DoAnimalWork(cow4, AnimalAction.Sold, DateTime.Now.AddDays(-12));
             farm.DoAnimalWork(cow5, AnimalAction.Sold, DateTime.Now.AddDays(-5));
 
-            var invoices = farm.GetInvoices(new InvoiceFilterForChicken(DateTime.Now.AddDays(-20), DateTime.Now.AddDays(-10)));
+            var invoices = farm.GetInvoices(new InvoiceFilterForCows(DateTime.Now.AddDays(-20), DateTime.Now.AddDays(-10)));
 
             invoices.Should().NotBeNullOrEmpty().And.HaveCount(4);
         }
