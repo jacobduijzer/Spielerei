@@ -83,11 +83,15 @@ public class InvoiceFilterForChicken : InvoiceFilterBase
 The actual usage in a service:
 
 ```csharp
+public IEnumerable<Invoice> GetInvoices(IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>> filter) =>
+    filter.Create(AnimalRecords.FindAll(filter.Filter));
+
 public IEnumerable<Invoice> GetInvoices(List<IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>>> filters) =>
     filters.SelectMany(filter => filter.Create(AnimalRecords.FindAll(filter.Filter)));
 ```
 
 ```csharp
-
 var invoices = farm.GetInvoices(new InvoiceFilterForCows(DateTime.Now.AddDays(-20), DateTime.Now.AddDays(-10)));
 ```
+
+Take a look at ```FarmShould.cs``` in the test project for more samples. 
