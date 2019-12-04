@@ -16,6 +16,6 @@ jobs:
     - name: Build with dotnet
       run: dotnet build --configuration Release SolidFarm/SolidFarm.sln
     - name: dotnet test
-      run: dotnet test --configurationn Release SolidFarm/SolidFarm.sln
+      run: dotnet test --configuration Release SolidFarm/SolidFarm.sln
     
 
