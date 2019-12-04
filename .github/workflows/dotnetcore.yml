@@ -15,7 +15,7 @@ jobs:
         dotnet-version: 3.0.100
     - name: Build with dotnet
       run: dotnet build --configuration Release SolidFarm/SolidFarm.sln
-    - name: test
+    - name: dotnet test
       run: dotnet test --configurationn Release SolidFarm/SolidFarm.sln
     
 
