@@ -36,6 +36,8 @@ The definition of the generics might seem a bit too complicated and many times `
 
 An implementation of the interface I used a base class here because I filter on cow's and chickens which are both ```IAnimal```) could look like this:
 
+
+*Base class:*
 ```csharp
 public class InvoiceFilterBase : IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>>
 {
@@ -60,6 +62,8 @@ public class InvoiceFilterBase : IFilterAndCreate<AnimalRecord, IEnumerable<Anim
                                                           y.AnimalAction.Equals(AnimalAction.Sold)));
 }
 ```
+*Chicken filter:*
+
 
 ```csharp
 public class InvoiceFilterForChicken : InvoiceFilterBase
@@ -81,4 +85,9 @@ The actual usage in a service:
 ```csharp
 public IEnumerable<Invoice> GetInvoices(List<IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>>> filters) =>
     filters.SelectMany(filter => filter.Create(AnimalRecords.FindAll(filter.Filter)));
+```
+
+```csharp
+
+var invoices = farm.GetInvoices(new InvoiceFilterForCows(DateTime.Now.AddDays(-20), DateTime.Now.AddDays(-10)));
 ```
