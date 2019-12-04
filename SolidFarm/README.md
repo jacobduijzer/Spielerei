@@ -22,8 +22,8 @@ I created the following interface:
 
 ```csharp
 public interface IFilterAndCreate<TFilterObject, TCreateIn, TCreateOut>
-    {
-        Predicate<TFilterObject> Filter { get; }
-        Func<TCreateIn, TCreateOut> Create { get; }
-    }
+{
+    Predicate<TFilterObject> Filter { get; }
+    Func<TCreateIn, TCreateOut> Create { get; }
+}
 ```
