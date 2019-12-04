@@ -18,6 +18,8 @@ While there might be many ways to Rome I want to emphasize that:
 - new selections might be added
 - creation of the invoice might be different based on selected animals
 
+## One interface to filter and create them all
+
 I created the following interface:
 
 ```csharp
@@ -27,6 +29,8 @@ public interface IFilterAndCreate<TFilterObject, TCreateIn, TCreateOut>
     Func<TCreateIn, TCreateOut> Create { get; }
 }
 ```
+
+## Sample implementation
 
 An implementation of the interface I used a base class here because I filter on cow's and chickens which are both ```IAnimal```) could look like this:
 
@@ -56,4 +60,23 @@ public class InvoiceFilterBase : IFilterAndCreate<AnimalRecord, IEnumerable<Anim
 ```
 
 ```csharp
+public class InvoiceFilterForChicken : InvoiceFilterBase
+{
+    public InvoiceFilterForChicken(DateTime filterDate)
+        : base(nameof(Chicken), filterDate)
+    {
+    }
+
+    public InvoiceFilterForChicken(DateTime startDate, DateTime endDate)
+        : base(nameof(Chicken), startDate, endDate)
+    {
+    }
+}
+```
+
+The actual usage in a service:
+
+```csharp
+public IEnumerable<Invoice> GetInvoices(List<IFilterAndCreate<AnimalRecord, IEnumerable<AnimalRecord>, IEnumerable<Invoice>>> filters) =>
+    filters.SelectMany(filter => filter.Create(AnimalRecords.FindAll(filter.Filter)));
 ```
