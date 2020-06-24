@@ -5,13 +5,13 @@ namespace FunctionalCSharp
 {
     public static class FunctionalExtensions
     {
-        public static IEnumerable<T> Where<T>(
-            this IEnumerable<T> ts, 
+        public static IEnumerable<T> Filter<T>(
+            this IEnumerable<T> items, 
             Func<T, bool> predicate)
         {
-            foreach (T t in ts)
-                if (predicate(t))
-                    yield return t;
+            foreach (T item in items)
+                if (predicate(item))
+                    yield return item;
         }
     }
 }

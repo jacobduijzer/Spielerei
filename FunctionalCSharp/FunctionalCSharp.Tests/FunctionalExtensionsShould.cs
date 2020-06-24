@@ -13,9 +13,9 @@ namespace FunctionalCSharp.Tests
         {
             var list = Enumerable
                 .Range(1, 10)
-                .Where<int>(x => x % 2 == 0);
+                .Filter<int>(x => x % 2 == 0);
 
-            list.Should().Contain(new List<int> { 2, 4, 6, 8, 10 });
+            list.Should().BeEquivalentTo(new List<int> { 2, 4, 6, 8, 10 });
         }
     }
 }
